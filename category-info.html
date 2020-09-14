@@ -23,15 +23,21 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-    </div>
-  </nav>
+      <a class="py-2 d-none d-md-inline-block" id="usuario" style="color: whitesmoke;"></a>
+      <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+      </div>
+      </nav>
+      <script>
+       var usuario = localStorage.getItem("usuario");
+       document.getElementById('usuario').innerHTML=user;
+      </script>
   <main role="main">
     <div class="container mt-5">
       <div class="text-center p-4">
         <h2>Descripción de la categoría</h2>
         <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
-        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
-          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, 
+          cualquiera sea la categoría seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
       </div>
       <h3 id="categoryName"></h3>
       <hr class="my-3">

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está Aquí</title>
-
+  <title>Puntuación</title>
+ 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
-
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -23,16 +22,55 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" id="usuario" style="color: whitesmoke;"></a>
+      <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+      </div>
+    </nav>
+    <div class="list-group-item">
+    <div id="carrusel2" style="width:70%; margin: auto;"></div>
+    <div id="infos"></div>
+    <div id="comments"></div>
+      <div id="info">
+      </div>
     </div>
-  </nav>
-  <div class="container p-5">
-    <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>-->
-  </div>
+    </div>
+    <div id="cajaComments"><label for="nombreScatola">Nombre</label><input id="commId" name="nombreScatola" type="text">
+    <label for="comentariosScatola">Comentarios</label><input id="comId" name="comentariosScatola" type="text">    
+    <label for="puntos">Cant. de estrellas</label>
+    <div style="margin-right: 96%;"><select class="form-control form-control-sm" id="puntaje" name="puntos">
+  <option value="1">1</option>
+  <option value="2">2</option> 
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select></div>
+<p id="puntuacion">
+  Puntaje:<span id="calif"></span></p>
+  <input class="btn btn-success" style="margin-left: 120px;
+  width: 100px; height: 40px;" type="submit" value="Comentar" id="inpCOM"></input></div>
+</div>
+<script>
+  function puntuacion(){
+    var puntos = document.getElementById("puntaje").value;
+    var estrellas = '';
+  for(let i = 1; i <=5; i ++) {
+    if (i<=puntos){
+      estrellas += '<i class="fas fa-star checked"></i>';
+    }else{
+      estrellas += '<i class="far fa-star"></i>';
+    }
+    }
+    document.getElementById('calif').innerHTML=estrellas;
+  };       
+  document.getElementById('puntaje').addEventListener('change', function(){
+    puntuacion(document.getElementById('puntaje').value);
+  });
+</script>
+<script>
+  var usuario = localStorage.getItem("usuario");
+  document.getElementById('usuario').innerHTML=usuario;
+ </script>
+    </div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
