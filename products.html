@@ -1,4 +1,4 @@
-6<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
   <head>
@@ -14,17 +14,27 @@
   </head>
   <body>
     </div><br>
-    Clickeaste el número: <span id="valor"></span>
-      <nav class="site-header sticky-top py-1 bg-dark">
+      <nav class="site-header sticky-top py-1 bg-dark"><!--encabezado del sitio con redireccionamientos de pagina-->
         <div class="container d-flex flex-column flex-md-row justify-content-between">
           <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
           <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
           <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
           <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-          <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-          <a class="py-2 d-none d-md-inline-block" id="iniciodesesion"></a>
-          <a class="py-2 d-none d-md-inline-block" id="user" style="color: whitesmoke;"></a>
-          <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+          <form action="" method="post" target="_blank"> 
+            <input type="search" name="busquedaproductos" list="productos.html" placeholder="Buscar Aquí..."><!--buscador de los productos-->
+              <input type="submit" value="Buscar">
+          </form>
+          <datalist id="productos.html">
+          </datalist>
+          <div class="dropdown show"><!--menu desplegable -->
+            <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
+            <div class="dropdown-menu" aria-labelledby="usuario">
+              <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
+                <a class="dropdown-item" href="#">Perfil</a>
+                <a class="dropdown-item" href="#">Salir</a>
+                <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+            </div>
+            </div>
           </div>
          </nav>
          
@@ -57,16 +67,16 @@
                         <div class="col">
                           <p class="font-weight-normal text-right my-2">Cantidad.</p>
                         </div>
-                        <div class="col">
-                          <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-                        </div>
-                        <div class="col">
-                          <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-                        </div>
+                          <div class="col"><!--campo para rellenar con numero de unidades-->
+                             <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                          </div>
+                          <div class="col"><!--campo para rellenar con numero de unidades-->
+                             <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                          </div>
                         <div class="col-3 p-0">
                           <div class="btn-group" role="group">
-                            <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                            <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                             <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button><!--boton para filtrar el campo de una cantidad expresada en numero-->
+                             <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button><!--boton para limpiar el campo de una cantidad expresada en numero-->
                           </div>
                         </div>
                       </div>
@@ -74,7 +84,7 @@
                 </div>
         <div class="container">
             <div class="row">
-                <div class="list-group" id="cat-list-container">
+                <div class="list-group" id="cat-list-container"><!--lista de productos-->
                 </div>
             </div>
         </div>
@@ -94,6 +104,9 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
-    <script> document.getElementById("user").href=localStorage.getItem("userName");</script>
+    <script>
+      var sesion = localStorage.getItem("userName"); 
+      document.getElementById('usuario').innerHTML=sesion; //Lees de localStorage y guardas en el enlace
+    </script>
   </body>
   </html>

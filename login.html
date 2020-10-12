@@ -6,13 +6,13 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <title>eMercado - Todo lo que busques está Aquí</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
+  <style> /*estilos aplicados para el cuadro de acceso donde el usuario puede guardar sus datos*/
 
     html, body{
       min-height: 100%;
@@ -83,15 +83,14 @@
 </head>
 
 <body>
-  
-  <div class="cajalogin">
+  <div class="cajalogin"> <!--Aquí encuentras el cuadro de acceso donde el usuario puede guardar sus datos de login.-->
     <header>REGISTRAS AQUI TUS DATOS DE USUARIO:</header>
     <br/>  
   <input id="user" class="form" type="text" placeholder="Nombre de Usuario" required/>
   <br/>
   <input id="pass" class="form" type="password" placeholder="Contraseña" required/><br>
-  <button id="logButton" class="btn btn-secondary" onclick="login(user.value, pass.value)">Login</button>
-  <label><input id="datitos" type="checkbox" checked="checked" name="remember">¡Recordar mis datos!</label> 
+  <button id="logButton" class="btn btn-secondary" onclick="login(user.value, pass.value)">Login</button><!--boton de login-->
+  <label><input id="datitos" type="checkbox" checked="checked" name="remember">¡Recordar mis datos!</label> <!--check mark, para guardar los datos de acceso-->
   <footer id="ceibal">&copy;<small>||Ceibal All Rights Reserved 2020</small></footer>
   </div>
   <script src="js/init.js"></script>

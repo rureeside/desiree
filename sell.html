@@ -36,8 +36,22 @@
             <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        </div>
+            <form action="" method="post" target="_blank"> 
+              <input type="search" name="busquedaproductos" list="productos.html" placeholder="Buscar Aquí..."><!--buscador de los productos-->
+                <input type="submit" value="Buscar">
+            </form>
+            <datalist id="productos.html">
+            </datalist>
+            <div class="dropdown show"><!--menu desplegable -->
+              <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
+              <div class="dropdown-menu" aria-labelledby="usuario">
+                <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
+                  <a class="dropdown-item" href="#">Perfil</a>
+                  <a class="dropdown-item" href="#">Salir</a>
+                  <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+              </div>
+              </div>
+            </div>
     </nav>
       <div class="container">
         <div class="text-center p-4">
@@ -217,5 +231,9 @@
       <script src="js/dropzone.js"></script>
       <script src="js/init.js"></script>
       <script src="js/sell.js"></script>
+      <script>
+        var sesion = localStorage.getItem("userName"); 
+        document.getElementById('usuario').innerHTML=sesion; //Lees de localStorage y guardas en el enlace
+      </script>
     </body>
 </html>

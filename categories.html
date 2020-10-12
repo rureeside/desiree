@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
+    <title>eMercado - Todo lo que busques está aquí</title><!--Bienvenidos-->
    
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -14,27 +14,39 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a class="py-2 d-none d-md-inline-block" id="usuario" style="color: whitesmoke;"></a>
-        <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+    <nav class="site-header sticky-top py-1 bg-dark"><!--encabezado del sitio con redireccionamientos de pagina-->
+       <div class="container d-flex flex-column flex-md-row justify-content-between">
+         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+         <form action="" method="post" target="_blank"> 
+          <input type="search" name="busquedaproductos" list="productos.html" placeholder="Buscar Aquí..."><!--buscador de los productos-->
+            <input type="submit" value="Buscar">
+        </form>
+        <datalist id="productos.html">
+        </datalist>
+        <div class="dropdown show"><!--menu desplegable -->
+          <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
+          <div class="dropdown-menu" aria-labelledby="usuario">
+            <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
+              <a class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" href="#">Salir</a>
+              <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+          </div>
+          </div>
         </div>
       </nav>
         <script>
          var usuario = localStorage.getItem("usuario");
-         document.getElementById('usuario').innerHTML=user;
+         document.getElementById('usuario').innerHTML=usuario;
         </script>
-    <main role="main" class="pb-5">
-        <div class="text-center p-4">
+        <main role="main" class="pb-5">
+          <div class="text-center p-4">
             <h2>Categorías</h2>
             <p class="lead">Verás aquí todas las categorías del sitio.</p>
-        </div>
-        <div class="container">
+          </div>
+         <div class="container"><!-- Aqui encuentras los filtros aplicados por precio y por cantidad de productos vendidos -->
             <div class="row">
                 <div class="col text-right">
                     <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
@@ -48,8 +60,8 @@
                             <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cantidad.
                         </label>
                     </div>
-                </div>
-            </div>
+                  </div>
+                 </div>
             <div class="row justify-content-end">
               <div class="col-md-6"></div>
                 <div class="col-md-6 col-sm-12 mb-1 container">
@@ -57,16 +69,16 @@
                     <div class="col">
                       <p class="font-weight-normal text-right my-2">Cant.</p>
                     </div>
-                    <div class="col">
+                    <div class="col"><!--campo para rellenar con numero de unidades-->
                       <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
                     </div>
-                    <div class="col">
+                    <div class="col"><!--campo para rellenar con numero de unidades-->
                       <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
                     </div>
                     <div class="col-3 p-0">
                       <div class="btn-group" role="group">
-                        <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                        <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                        <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button><!--boton para filtrar el campo de una cantidad expresada en numero-->
+                        <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button><!--boton para limpiar el campo de una cantidad expresada en numero-->
                       </div>
                     </div>
                   </div>
@@ -83,7 +95,7 @@
         <p class="float-right">
           <a href="#">Volver arriba</a>
         </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p> <!-- <3! -->
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>
@@ -92,5 +104,10 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/categories.js"></script>
+    <script>
+      var sesion = localStorage.getItem("userName"); 
+      document.getElementById('usuario').innerHTML=sesion; //Lees de localStorage y guardas en el enlace
+   </script>
   </body>
+
 </html>

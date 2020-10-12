@@ -15,71 +15,83 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="usuario" style="color: whitesmoke;"></a>
-      <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+   <nav class="site-header sticky-top py-1 bg-dark"><!--encabezado del sitio con redireccionamientos de pagina-->
+       <div class="container d-flex flex-column flex-md-row justify-content-between">
+          <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+          <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+          <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+          <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+          <form action="" method="post" target="_blank"> 
+            <input type="search" name="busquedaproductos" list="productos.html" placeholder="Buscar Aquí..."><!--buscador de los productos-->
+              <input type="submit" value="Buscar">
+          </form>
+          <datalist id="productos.html">
+          </datalist>
+          <div class="dropdown show"><!--menu desplegable -->
+            <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
+            <div class="dropdown-menu" aria-labelledby="usuario">
+              <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
+                <a class="dropdown-item" href="#">Perfil</a>
+                <a class="dropdown-item" href="#">Salir</a>
+                <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+            </div>
+            </div>
+          </div>
+   </nav>
+      <div class="list-group-item">
+        <div id="carrusel2" style="width:70%; margin: auto;"></div>
+        <div id="infos"></div>
+        <div id="productosRelacionados"></div>
+        <div id="comments"></div>
+        <div id="info"></div>
       </div>
-    </nav>
-    <div class="list-group-item">
-    <div id="carrusel2" style="width:70%; margin: auto;"></div>
-    <div id="infos"></div>
-    <div id="comments"></div>
-      <div id="info">
-      </div>
-    </div>
-    </div>
-    <div id="cajaComments"><label for="nombreScatola">Nombre</label><input id="commId" name="nombreScatola" type="text">
-    <label for="comentariosScatola">Comentarios</label><input id="comId" name="comentariosScatola" type="text">    
-    <label for="puntos">Cant. de estrellas</label>
-    <div style="margin-right: 96%;"><select class="form-control form-control-sm" id="puntaje" name="puntos">
-  <option value="1">1</option>
-  <option value="2">2</option> 
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select></div>
-<p id="puntuacion">
-  Puntaje:<span id="calif"></span></p>
-  <input class="btn btn-success" style="margin-left: 120px;
-  width: 100px; height: 40px;" type="submit" value="Comentar" id="inpCOM"></input></div>
-</div>
-<script>
-  function puntuacion(){
+       <div id="cajaComments" class="container"><label for="nombreScatola">Nombre</label><input id="commId" name="nombreScatola" type="text"> <!--aqui el usuario puede insertar sus comentarios y puntuaciones-->
+         <label for="comentariosScatola">Comentarios</label><input id="comId" name="comentariosScatola" type="text">    
+         <label for="puntos">Cant. de estrellas</label>
+       <div style="margin-right: 96%;">
+         <select class="form-control form-control-sm" id="puntaje" name="puntos"><!--puntaje en formato de estrellitas-->
+            <option value="1">1</option>
+            <option value="2">2</option> 
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+         </select>
+       </div>
+           <p id="puntuacion">
+            Puntaje:<span id="calif"></span></p>
+           <input class="btn btn-success" style="margin-left: 120px; width: 100px; height: 40px;" type="submit" value="Comentar" id="inpCOM"></input>
+       </div>
+       </div>
+ <script>
+       function puntuacion(){
     var puntos = document.getElementById("puntaje").value;
     var estrellas = '';
-  for(let i = 1; i <=5; i ++) {
-    if (i<=puntos){
-      estrellas += '<i class="fas fa-star checked"></i>';
-    }else{
-      estrellas += '<i class="far fa-star"></i>';
+        for(let i = 1; i <=5; i ++) {
+         if (i<=puntos){
+           estrellas += '<i class="fas fa-star checked"></i>';
+            }else{
+              estrellas += '<i class="far fa-star"></i>';
     }
     }
     document.getElementById('calif').innerHTML=estrellas;
-  };       
-  document.getElementById('puntaje').addEventListener('change', function(){
+    };       
+    document.getElementById('puntaje').addEventListener('change', function(){
     puntuacion(document.getElementById('puntaje').value);
-  });
-</script>
-<script>
-  var usuario = localStorage.getItem("usuario");
-  document.getElementById('usuario').innerHTML=usuario;
+    });
  </script>
-    </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
+ <script>
+   var usuario = localStorage.getItem("usuario");
+   document.getElementById('usuario').innerHTML=usuario;
+ </script>
+     <footer class="text-muted">
+        <div class="container">
+         <p class="float-right">
+         <a href="#">Volver arriba</a>
+         </p>
+         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+     </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
