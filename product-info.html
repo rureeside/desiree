@@ -31,24 +31,24 @@
             <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
             <div class="dropdown-menu" aria-labelledby="usuario">
               <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
-                <a class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" class="profile" href="my-profile.html"><i class="fas fa-user"></i>Mi Perfil </a>
                 <a class="dropdown-item" href="#">Salir</a>
                 <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
             </div>
             </div>
           </div>
-   </nav>
-      <div class="list-group-item">
-        <div id="carrusel2" style="width:70%; margin: auto;"></div>
-        <div id="infos"></div>
-        <div id="productosRelacionados"></div>
-        <div id="comments"></div>
-        <div id="info"></div>
-      </div>
-       <div id="cajaComments" class="container"><label for="nombreScatola">Nombre</label><input id="commId" name="nombreScatola" type="text"> <!--aqui el usuario puede insertar sus comentarios y puntuaciones-->
+        </nav>
+        <div class="list-group-item">
+          <div id="carrusel2" style="width:70%; margin: auto;"></div>
+          <div id="infos"></div>
+          <div id="productosRelacionados"></div>
+          <div id="comments"></div>
+          <div id="info"></div>
+        </div>
+        <div id="cajaComments" class="container"><label for="nombreScatola">Nombre</label><input id="commId" name="nombreScatola" type="text"> <!--aqui el usuario puede insertar sus comentarios y puntuaciones-->
          <label for="comentariosScatola">Comentarios</label><input id="comId" name="comentariosScatola" type="text">    
          <label for="puntos">Cant. de estrellas</label>
-       <div style="margin-right: 96%;">
+         <div style="margin-right: 96%;">
          <select class="form-control form-control-sm" id="puntaje" name="puntos"><!--puntaje en formato de estrellitas-->
             <option value="1">1</option>
             <option value="2">2</option> 

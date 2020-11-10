@@ -46,15 +46,15 @@
               <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
               <div class="dropdown-menu" aria-labelledby="usuario">
                 <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
-                  <a class="dropdown-item" href="#">Perfil</a>
-                  <a class="dropdown-item" href="#">Salir</a>
-                  <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
-              </div>
+                <a class="dropdown-item" class="profile" href="my-profile.html"><i class="fas fa-user"></i>Mi Perfil </a>
+                <a class="dropdown-item" href="#">Salir</a>
+                <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
               </div>
             </div>
-    </nav>
-      <div class="container">
-        <div class="text-center p-4">
+          </div>
+        </nav>
+        <div class="container">
+          <div class="text-center p-4">
           <h2>Vender</h2>
           <p class="lead">Ingresa los datos del artículo a vender.</p>
         </div>
@@ -67,7 +67,7 @@
                   <label for="productName">Nombre</label>
                   <input type="text" class="form-control" id="productName" placeholder="" value="" >
                   <div class="invalid-feedback">
-                    Ingresa un nombre
+                    Ingrese un nombre:
                   </div>
                 </div>
               </div>

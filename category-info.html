@@ -32,17 +32,17 @@
         <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
         <div class="dropdown-menu" aria-labelledby="usuario">
           <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
-            <a class="dropdown-item" href="#">Perfil</a>
-            <a class="dropdown-item" href="#">Salir</a>
-            <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
-        </div>
+          <a class="dropdown-item" class="profile" href="my-profile.html"><i class="fas fa-user"></i>Mi Perfil </a>
+          <a class="dropdown-item" href="#">Salir</a>
+          <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
         </div>
       </div>
-      </nav>
-      <script>
-       var usuario = localStorage.getItem("usuario");
-       document.getElementById('usuario').innerHTML=usuario;
-      </script>
+    </div>
+  </nav>
+  <script>
+  var usuario = localStorage.getItem("usuario");
+  document.getElementById('usuario').innerHTML=usuario;
+  </script>
   <main role="main">
     <div class="container mt-5">
       <div class="text-center p-4">
@@ -50,59 +50,51 @@
         <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
         <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, 
           cualquiera sea la categoría seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+        </div>
+        <h3 id="categoryName"></h3>
+        <hr class="my-3">
+        <dl>
+          <dt>Descripción</dt>
+          <dd>
+            <p id="categoryDescription"></p>
+          </dd>
+          <dt>Cantidad de productos en la categoría</dt>
+          <dd>
+            <p id="productCount"></p>
+          </dd>
+          <dt>Criterio para incluir productos en esta categoría</dt>
+          <dd>
+            <p id="productCriteria"></p>
+          </dd>
+          <dt>Imágenes ilustrativas</dt>
+          <dd>
+            <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+            </div>
+          </dd>
+        </dl>
+        <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
       </div>
-      <h3 id="categoryName"></h3>
-      <hr class="my-3">
-      <dl>
-        <dt>Descripción</dt>
-        <dd>
-          <p id="categoryDescription"></p>
-        </dd>
-
-        <dt>Cantidad de productos en la categoría</dt>
-        <dd>
-          <p id="productCount"></p>
-        </dd>
-
-        <dt>Criterio para incluir productos en esta categoría</dt>
-        <dd>
-          <p id="productCriteria"></p>
-        </dd>
-
-        <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-          </div>
-        </dd>
-      </dl>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+      </div>
     </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/category-info.js"></script>
-  <script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/category-info.js"></script>
+    <script>
     var sesion = localStorage.getItem("userName"); 
     document.getElementById('usuario').innerHTML=sesion; //Lees de localStorage y guardas en el enlace
-  </script>
-</body>
-
-</html>
+    </script>
+    </body>
+    </html>

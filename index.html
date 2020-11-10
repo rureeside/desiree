@@ -34,9 +34,9 @@
           <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
           <div class="dropdown-menu" aria-labelledby="usuario">
             <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
-              <a class="dropdown-item" href="#">Perfil</a>
-              <a class="dropdown-item" href="#">Salir</a>
-              <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
+            <a class="dropdown-item" class="profile" href="my-profile.html"><i class="fas fa-user"></i>Mi  Perfil </a>
+            <a class="dropdown-item" href="#">Salir</a>
+            <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
           </div>
           </div>
         </div>
@@ -61,30 +61,30 @@
             </div>
             <div class="col-md-4"><!--seccion categoria juguetes:)-->
               <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
-                  <h3 class="m-3">Juguetes (354)</h3>
-                  <div class="card-body">
-                     <p class="card-text">Encuentra Aquí los mejores Juguetes para cualquier edad.</p>
-                  </div>
+                <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
+                <h3 class="m-3">Juguetes (354)</h3>
+                <div class="card-body">
+                  <p class="card-text">Encuentra Aquí los mejores Juguetes para cualquier edad.</p>
+                </div>
               </a>
             </div>
             <div class="col-md-4"><!--seccion categoria muebles-->
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
-                  <h3 class="m-3">Muebles (157)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
-                  </div>
-                </a>
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
+                <h3 class="m-3">Muebles (157)</h3>
+                <div class="card-body">
+                  <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
+                </div>
+              </a>
             </div>
             <div class="col-md-4"><!--seccion categoria herramientas-->
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
-                  <h3 class="m-3">Herramientas (452)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
-                  </div>
-                </a>
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
+                <h3 class="m-3">Herramientas (452)</h3>
+                <div class="card-body">
+                  <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
+                </div>
+              </a>
             </div>
             <div class="col-md-4"><!--seccion categoria computadoras-->
                 <a href="categories.html" class="card mb-4 shadow-sm custom-card">
@@ -124,11 +124,9 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script>
-      var sesion = localStorage.getItem("userName"); 
-      alert ("El usuario loggeado es " + sesion);
-      document.getElementById('usuario').innerHTML=sesion; //Lees de localStorage y guardas en el enlace
-   </script>
-  
- </body>
-
- </html>
+    var sesion = localStorage.getItem("userName"); 
+    alert ("El usuario loggeado es " + sesion);
+    document.getElementById('usuario').innerHTML=sesion; //Lees de localStorage y guardas en el enlace
+    </script>
+    </body>
+    </html>

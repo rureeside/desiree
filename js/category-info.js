@@ -14,7 +14,6 @@ function showImagesGallery(array){
             </div>
         </div>
         `
-
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }

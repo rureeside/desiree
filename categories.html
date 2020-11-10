@@ -30,57 +30,57 @@
           <button id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Usuario</button>
           <div class="dropdown-menu" aria-labelledby="usuario">
             <a class="dropdpwn-item" href="cart.html">Mi Carrito <span class="badge badge-success"> 0</span> </a>
-              <a class="dropdown-item" href="#">Perfil</a>
-              <a class="dropdown-item" href="#">Salir</a>
-              <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
-          </div>
+            <a class="dropdown-item" class="profile" href="my-profile.html"><i class="fas fa-user"></i>Mi Perfil </a>
+            <a class="dropdown-item" href="#">Salir</a>
+            <button id="Salir" onclick="localStorage.clear(); alert('desconecta Usuario'); location.href='index.html';">Desconectar usuario</a></button>
           </div>
         </div>
-      </nav>
-        <script>
-         var usuario = localStorage.getItem("usuario");
-         document.getElementById('usuario').innerHTML=usuario;
-        </script>
-        <main role="main" class="pb-5">
-          <div class="text-center p-4">
-            <h2>Categorías</h2>
-            <p class="lead">Verás aquí todas las categorías del sitio.</p>
+      </div>
+    </nav>
+    <script>
+    var usuario = localStorage.getItem("usuario");
+    document.getElementById('usuario').innerHTML=usuario;
+    </script>
+    <main role="main" class="pb-5">
+      <div class="text-center p-4">
+        <h2>Categorías</h2>
+        <p class="lead">Verás aquí todas las categorías del sitio.</p>
+      </div>
+      <div class="container"><!-- Aqui encuentras los filtros aplicados por precio y por cantidad de productos vendidos -->
+        <div class="row">
+          <div class="col text-right">
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-light active" id="sortAsc" >
+                <input type="radio" name="options" autocomplete="off" checked>A-Z
+              </label>
+              <label class="btn btn-light" id="sortDesc" >
+                <input type="radio" name="options" autocomplete="off">Z-A
+              </label>
+              <label class="btn btn-light" id="sortByCount" >
+                <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cantidad.
+              </label>
+            </div>
           </div>
-         <div class="container"><!-- Aqui encuentras los filtros aplicados por precio y por cantidad de productos vendidos -->
-            <div class="row">
-                <div class="col text-right">
-                    <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                        <label class="btn btn-light active" id="sortAsc" >
-                            <input type="radio" name="options" autocomplete="off" checked>A-Z
-                        </label>
-                        <label class="btn btn-light" id="sortDesc" >
-                            <input type="radio" name="options" autocomplete="off">Z-A
-                        </label>
-                        <label class="btn btn-light" id="sortByCount" >
-                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cantidad.
-                        </label>
-                    </div>
-                  </div>
-                 </div>
-            <div class="row justify-content-end">
-              <div class="col-md-6"></div>
-                <div class="col-md-6 col-sm-12 mb-1 container">
-                  <div class="row container p-0 m-0">
-                    <div class="col">
-                      <p class="font-weight-normal text-right my-2">Cant.</p>
-                    </div>
-                    <div class="col"><!--campo para rellenar con numero de unidades-->
-                      <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-                    </div>
-                    <div class="col"><!--campo para rellenar con numero de unidades-->
-                      <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-                    </div>
-                    <div class="col-3 p-0">
-                      <div class="btn-group" role="group">
-                        <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button><!--boton para filtrar el campo de una cantidad expresada en numero-->
-                        <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button><!--boton para limpiar el campo de una cantidad expresada en numero-->
-                      </div>
-                    </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Cant.</p>
+              </div>
+              <div class="col"><!--campo para rellenar con numero de unidades-->
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              </div>
+              <div class="col"><!--campo para rellenar con numero de unidades-->
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button><!--boton para filtrar el campo de una cantidad expresada en numero-->
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button><!--boton para limpiar el campo de una cantidad expresada en numero-->
+                </div>
+              </div>
                   </div>
                 </div>
             </div>

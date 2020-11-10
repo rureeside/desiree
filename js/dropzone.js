@@ -80,7 +80,6 @@ var Emitter = function () {
           }
 
           var callback = _ref;
-
           callback.apply(this, args);
         }
       }
@@ -144,7 +143,6 @@ var Dropzone = function (_Emitter) {
         dropzone.on("dragEnter", function() { });
         */
       this.prototype.events = ["drop", "dragstart", "dragend", "dragenter", "dragover", "dragleave", "addedfile", "addedfiles", "removedfile", "thumbnail", "error", "errormultiple", "processing", "processingmultiple", "uploadprogress", "totaluploadprogress", "sending", "sendingmultiple", "success", "successmultiple", "canceled", "canceledmultiple", "complete", "completemultiple", "reset", "maxfilesexceeded", "maxfilesreached", "queuecomplete"];
-
       this.prototype.defaultOptions = {
         /**
          * Has to be specified on elements other than form (or when the form
